@@ -1,16 +1,17 @@
 package node.create;
 
+// TODO: research how to restrict types generally.
 public class Node implements INode{
-    int value;
-    INode node;
+    private int value;
+    private INode nextNode;
 
     public Node(int value) {
         this.value = value;
-        this.node = null;
+        this.nextNode = null;
     }
-    public Node(int value, INode node) {
+    public Node(int value, INode nextNode) {
         this.value = value;
-        this.node = node;
+        this.nextNode = nextNode;
     }
     @Override
     public int getValue() {
@@ -24,11 +25,11 @@ public class Node implements INode{
 
     @Override
     public void setNextNode(INode node) {
-        this.node = node;
+        this.nextNode = node;
     }
 
     @Override
     public INode getNextNode() {
-        return node;
+        return nextNode;
     }
 }
